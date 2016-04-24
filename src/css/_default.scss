@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-.inputs {
+.container-inputs {
   text-align: center;
   padding: 1em;
 }
@@ -19,14 +19,13 @@ input {
 }
 
 .container {
-  padding: 1em;
+  margin: 1em;
   text-align: center;
 }
 
 .grid-item {
-  border: 1px solid black;
   display: inline-block;
-  margin: 0.1em 0.1em;
+  border: 1px solid black;
 }
 
 .color {

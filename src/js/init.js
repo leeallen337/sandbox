@@ -3,14 +3,8 @@ let inputs = document.querySelectorAll('input');
 let container = document.querySelector('.container');
 
 btn.addEventListener('click', function(el) {
-  let windowWidth = window.innerWidth;
 
-  for (let i = 0; i < inputs.length; i++) {
-    if (!inputs[i].value) {
-      alert('enter a number for both rows and columns');
-      return;
-    }
-  }
+  needAllInputs(inputs);
 
   removeChildrenElements(container);
 
@@ -28,6 +22,15 @@ container.addEventListener('mouseover', function(el) {
 
 
 // Functions
+function needAllInputs(inputsObj) {
+  for (let i = 0; i < inputsObj.length; i++) {
+    if (!inputsObj[i].value) {
+      alert('Enter all inputs');
+      return;
+    }
+  }
+}
+
 function removeChildrenElements(container) {
   if (container.children.length > 0) {
     let firstElementChild = container.firstElementChild;
@@ -39,8 +42,11 @@ function removeChildrenElements(container) {
   }
 }
 
-function buildGrid(parentElement, rowNumber, columnNumber) {
+function buildGrid(parentElement, rowNumber, columnNumber, winWidth, winHeight) {
   let fragment = document.createDocumentFragment();
+  let parentElementWidth = parentElement.clientWidth;
+  let itemWidth = Math.floor(parentElementWidth / columnNumber);
+  let itemPadding = Math.floor(itemWidth / 2) - 1;
 
   for (let i = 0; i < rowNumber; i++) {
     let row = document.createElement('div');
@@ -49,6 +55,8 @@ function buildGrid(parentElement, rowNumber, columnNumber) {
     for (let j = 0; j < columnNumber; j++) {
       let item = document.createElement('div');
       item.classList.add('grid-item');
+      item.style.width = `${itemWidth}px`;
+      item.style.padding = `${itemPadding}px`;
       row.appendChild(item);
     }
 
