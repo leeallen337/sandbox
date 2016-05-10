@@ -1,7 +1,9 @@
 var vm = new Vue({
   el: '#demo',
   data: {
-    activeColor: 'red',
-    fontSize: 30
+    styleObject: {
+      color: 'red',
+      fontSize: '13px'
+    }
   }
 })
