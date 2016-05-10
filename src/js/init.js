@@ -1,7 +1,9 @@
 var vm = new Vue({
   el: '#demo',
   data: {
-    isA: true,
-    isB: false
+    classObject: {
+      'class-a': true,
+      'class-b': false
+    }
   }
 })
