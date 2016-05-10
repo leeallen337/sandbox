@@ -2,15 +2,11 @@ var vm = new Vue({
   el: '#demo',
   data: {
     firstName: 'Foo',
-    lastName: 'Bar',
-    fullName: 'Foo Bar'
+    lastName: 'Bar'
+  },
+  computed: {
+    fullName: function() {
+      return this.firstName + ' ' + this.lastName;
+    }
   }
-})
-
-vm.$watch('firstName', function(val) {
-  this.fullName = val + ' ' + this.lastName;
-})
-
-vm.$watch('lastName', function(val) {
-  this.fullName = this.firstName + ' ' + val;
 })
