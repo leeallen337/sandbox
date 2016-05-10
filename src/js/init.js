@@ -1,16 +1,11 @@
-var exampleData = {
-  name: 'Vue.js'
-}
-
-var exampleVM = new Vue({
-  el: '#example-1',
-  data: exampleData
-})
-
-
-var exampleVM2 = new Vue({
-  el: '#example-2',
+var vm = new Vue({
+  el: '#example',
   data: {
-    greeting: true
+    a: 1
+  },
+  computed: {
+    b: function() {
+      return this.a + 1;
+    }
   }
 })
