@@ -1,8 +1,7 @@
 var vm = new Vue({
   el: '#demo',
   data: {
-    classA: 'class-a',
-    classB: 'class-b',
-    isB: true
+    activeColor: 'red',
+    fontSize: 30
   }
 })

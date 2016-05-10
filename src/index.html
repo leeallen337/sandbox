@@ -12,7 +12,7 @@
   <body>
 
     <div id="demo">
-      <div class="static" v-bind:class="[classA, { classB: isB, classC: isC }]"></div>
+      <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">Foo Bar</div>
     </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
