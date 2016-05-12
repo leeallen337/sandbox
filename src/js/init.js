@@ -1,10 +1,10 @@
 var vm = new Vue({
   el: '#demo',
   data: {
-    parentMessage: 'Parent',
-    items: [
-      { message: 'Foo' },
-      { message: 'Bar' }
-    ]
+    object: {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30
+    }
   }
 })
