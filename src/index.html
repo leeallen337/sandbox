@@ -13,7 +13,7 @@
 
     <ul id="demo">
       <li v-for="item in items">
-        {{ item.message }}
+        {{ parentMessage }} - {{ $index }} - {{ item.message }}
       </li>
     </ul>
 
