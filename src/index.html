@@ -13,8 +13,8 @@
 
     <div id="demo">
       <ul>
-        <li v-for="value in object">
-          {{ $key }} : {{ value }}
+        <li v-for="(key, val) in object">
+          {{ key }} : {{ val }}
         </li>
       </ul>
     </div>
