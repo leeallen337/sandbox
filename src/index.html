@@ -11,12 +11,11 @@
 
   <body>
 
-    <div id="demo">
-      <template v-if="ok">
-        <h1>Title</h1>
-        <p>Paragraph</p>
-      </template>
-    </div>
+    <ul id="demo">
+      <li v-for="item in items">
+        {{ item.message }}
+      </li>
+    </ul>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
     <script src="js/app.min.js"></script>
