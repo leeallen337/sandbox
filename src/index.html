@@ -12,9 +12,8 @@
   <body>
 
     <div id="demo">
-      <span>Message is: {{ message }}</span>
-      <br />
-      <input type="text" placeholder="edit me" v-model="message" />
+      <input type="checkbox" id="checkbox" v-model="checked" />
+      <label for="checkbox">{{ checked }}</label>
     </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
