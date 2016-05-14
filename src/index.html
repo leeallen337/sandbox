@@ -12,8 +12,17 @@
   <body>
 
     <div id="demo">
-      <input type="checkbox" id="checkbox" v-model="checked" />
-      <label for="checkbox">{{ checked }}</label>
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+      <label for="jack">Jack</label>
+
+      <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+      <label for="john">John</label>
+
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+      <label for="mike">Mike</label>
+
+      <br />
+      <span>Checked names: {{ checkedNames | json }}</span>
     </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>

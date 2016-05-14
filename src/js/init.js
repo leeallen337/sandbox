@@ -1,3 +1,6 @@
 var vm = new Vue({
-  el: '#demo'
+  el: '#demo',
+  data: {
+    checkedNames: []
+  }
 })
