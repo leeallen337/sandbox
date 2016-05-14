@@ -1,10 +1,13 @@
 var vm = new Vue({
   el: '#demo',
   data: {
-    object: {
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 30
+    name: 'Vue.js'
+  },
+  methods: {
+    greet: function(event) {
+      alert('Hello ' + this.name + '!');
+
+      alert(event.target.tagName);
     }
   }
 })
