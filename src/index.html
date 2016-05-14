@@ -12,8 +12,8 @@
   <body>
 
     <div id="demo">
-      <button v-on:click="say('hi')">Say Hi</button>
-      <button v-on:click="say('what')">Say What</button>
+      <button v-on:click="say('hi', $event)">Say Hi</button>
+      <button v-on:click="say('what', $event)">Say What</button>
     </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
