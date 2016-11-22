@@ -7,4 +7,10 @@ d3.select('body').selectAll('p')
   .text(function (d) {
     return d;
   })
-  .style('color', 'red');
+  .style('color', function (d) {
+    if (d > 15) {
+      return 'red';
+    } else {
+      return 'blue';
+    }
+  });
