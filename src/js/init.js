@@ -1,4 +1,9 @@
-let dataset = [ 5, 10, 15, 20, 25 ];
+let dataset = [];
+
+for (let i = 0; i < 25; i++) {
+  let randomNumber = Math.random() * 30;
+  dataset.push(randomNumber);
+}
 
 d3.select('body').selectAll('div')
   .data(dataset)
