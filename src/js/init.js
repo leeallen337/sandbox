@@ -4,6 +4,7 @@ d3.select('body').selectAll('p')
   .data(dataset)
   .enter()
   .append('p')
-  .text(function (d, i) {
-    return `${d} ${i}`;
-  });
+  .text(function (d) {
+    return d;
+  })
+  .style('color', 'red');
