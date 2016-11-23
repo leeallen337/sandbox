@@ -25,4 +25,22 @@ svg.selectAll('rect')
   })
   .attr('fill', function (d, i) {
     return `rgb(0, 0, ${d * 10})`;
+  });
+
+svg.selectAll('text')
+  .data(dataset)
+  .enter()
+  .append('text')
+  .text(function (d) {
+    return d;
   })
+  .attr('x', function (d, i) {
+    return i * (width / dataset.length) + (width / dataset.length - barPadding) / 2;
+  })
+  .attr('y', function (d, i) {
+    return height - (d * 4) + 14;
+  })
+  .attr('font-family', 'sans-serif')
+  .attr('font-size', '11px')
+  .attr('fill', 'white')
+  .attr('text-anchor', 'middle');
