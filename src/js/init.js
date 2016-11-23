@@ -1,5 +1,6 @@
 const width = 500;
 const height = 100;
+const barPadding = 1;
 
 const dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13, 11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];;
 
@@ -13,8 +14,10 @@ svg.selectAll('rect')
   .enter()
   .append('rect')
   .attr('x', function (d, i) {
-    return i * 21; // bar width of 20 plus 1 for padding 
+    return i * (width / dataset.length);
   })
   .attr('y', 0)
-  .attr('width', 20)
-  .attr('height', 100);
+  .attr('width', width / dataset.length - barPadding)
+  .attr('height', function (d, i) {
+    return d * 4;
+  });
