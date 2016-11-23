@@ -16,7 +16,9 @@ svg.selectAll('rect')
   .attr('x', function (d, i) {
     return i * (width / dataset.length);
   })
-  .attr('y', 0)
+  .attr('y', function (d, i) {
+    return height - (d * 4);
+  })
   .attr('width', width / dataset.length - barPadding)
   .attr('height', function (d, i) {
     return d * 4;
