@@ -1,16 +1,27 @@
-let dataset = [];
+const width = 500;
+const height = 50;
+const dataset = [ 5, 10, 15, 20, 25 ];
 
-for (let i = 0; i < 25; i++) {
-  let randomNumber = Math.random() * 30;
-  dataset.push(randomNumber);
-}
+const svg = d3.select("body")
+  .append("svg")
+  .attr('width', width)
+  .attr('height', height);
 
-d3.select('body').selectAll('div')
+
+const circles = svg.selectAll('circle')
   .data(dataset)
   .enter()
-  .append('div')
-  .attr('class', 'bar')
-  .style('height', function (d) {
-    let barHeight = d * 5;
-    return barHeight + 'px';
+  .append('circle');
+
+circles.attr('cx', function (d, i) {
+    return (i * 50) + 25;
+  })
+  .attr('cy', height / 2)
+  .attr('r', function (d) {
+    return d;
+  })
+  .attr('fill', 'yellow')
+  .attr('stroke', 'orange')
+  .attr('stroke-width', function (d) {
+    return d / 2;
   });
