@@ -22,4 +22,7 @@ svg.selectAll('rect')
   .attr('width', width / dataset.length - barPadding)
   .attr('height', function (d, i) {
     return d * 4;
-  });
+  })
+  .attr('fill', function (d, i) {
+    return `rgb(0, 0, ${d * 10})`;
+  })
