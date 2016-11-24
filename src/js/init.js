@@ -29,4 +29,6 @@ svg.selectAll('circle')
   .attr('cy', function (d) {
     return d[1];
   })
-  .attr('r', 5);
+  .attr('r', function (d) {
+    return Math.sqrt(height - d[1]);
+  });
