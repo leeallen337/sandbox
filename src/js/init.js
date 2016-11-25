@@ -39,6 +39,9 @@ const rScale = d3.scaleLinear()
   })])
   .range([2, 5]);
 
+const xAxis = d3.axisBottom();
+xAxis.scale(xScale);
+
 svg.selectAll('circle')
   .data(dataset)
   .enter()
@@ -69,3 +72,8 @@ svg.selectAll('text')
   .attr("font-family", "sans-serif")
   .attr("font-size", "11px")
   .attr("fill", "red");
+
+svg.append('g')
+  .attr('class', 'axis')
+  .attr('transform', `translate(0, ${height - padding})`)
+  .call(xAxis)
