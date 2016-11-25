@@ -1,5 +1,6 @@
 const width = 500;
 const height = 100;
+const padding = 20;
 
 const dataset = [
   [ 5,     20 ],
@@ -23,13 +24,19 @@ const xScale = d3.scaleLinear()
   .domain([0, d3.max(dataset, function (d) {
     return d[0];
   })])
-  .range([0, width]);
+  .range([padding, width - padding * 2]);
 
 const yScale = d3.scaleLinear()
   .domain([0, d3.max(dataset, function (d) {
     return d[1];
   })])
-  .range([height, 0]);
+  .range([height - padding, padding]);
+
+const rScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset, function (d) {
+    return d[1];
+  })])
+  .range([2, 5]);
 
 svg.selectAll('circle')
   .data(dataset)
@@ -42,7 +49,7 @@ svg.selectAll('circle')
     return yScale(d[1]);
   })
   .attr('r', function (d) {
-    return Math.sqrt(height - d[1]);
+    return rScale(d[1]);
   })
 
 svg.selectAll('text')
