@@ -1,5 +1,5 @@
 const width = 500;
-const height = 100;
+const height = 300;
 const padding = 20;
 
 const dataset = [
