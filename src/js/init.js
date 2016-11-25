@@ -39,8 +39,9 @@ const rScale = d3.scaleLinear()
   })])
   .range([2, 5]);
 
-const xAxis = d3.axisBottom();
-xAxis.scale(xScale);
+const xAxis = d3.axisBottom()
+  .scale(xScale)
+  .ticks(5);
 
 svg.selectAll('circle')
   .data(dataset)
