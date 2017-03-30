@@ -1,10 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import HelloWorld from './components/HelloWorld';
+import expect from 'expect';
+import deepFreeze from 'deep-freeze';
 
-import styles from './css/index.css';
+function counter(state, action) {
+  if (typeof state === 'undefined') {
+    return 0;
+  }
 
-ReactDOM.render(
-  <HelloWorld />,
-  document.getElementById('root')
-);
+  if (action.type === 'INCREMENT') {
+    return state + 1;
+  } else if (action.type === 'DECREMENT') {
+    return state - 1;
+  } else {
+    return state;
+  }
+}
+
+expect(counter(0, { type: 'INCREMENT' })).toEqual(1);
+
+expect(counter(1, { type: 'INCREMENT' })).toEqual(2);
+
+expect(counter(2, { type: 'INCREMENT' })).toEqual(3);
+
+expect(counter(1, { type: 'DECREMENT' })).toEqual(0);
+
+expect(counter(1, { type: 'SOMETHING_else' })).toEqual(1);
+
+expect(counter(undefined, {})).toEqual(0);
+
+console.log('Tests passed');
