@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import expect from 'expect';
 import deepFreeze from 'deep-freeze';
 import { createStore } from 'redux';
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 
 const todo = (state, action) => {
   switch (action.type) {
@@ -49,12 +49,14 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
   }
 };
 
-// const todoApp = (state = {}, action) => {
-//   return {
-//     todos: todos(state.todos, action),
-//     visibilityFilter: visibilityFilter(state.visibilityFilter, action)
-//   };
-// };
+const combineReducers = (reducers) => {
+  return (state = {}, action) => {
+    return Object.keys(reducers).reduce((nextState, key) => {
+      nextState[key] = reducers[key](state[key], action)
+      return nextState;
+    }, {});
+  };
+}
 
 const todoApp = combineReducers({
   todos,
