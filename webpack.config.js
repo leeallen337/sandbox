@@ -12,6 +12,7 @@ const webpackConfig = {
   },
   output: {
     path: DIR_DIST,
+    publicPath: '/',
     filename: '[name].[chunkhash].js'
   },
   module: {

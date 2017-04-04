@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 const App = () => (
   <Router>
     <div>
-      <Route path="/:page?/:subpage?" render={({match}) => (
+      <Route path="/:a/:b" render={({match}) => (
         <h1>
-          Page: {match.params.page || 'Home'}
+          paramA: {match.params.a}
           <br />
-          Subpage: {match.params.subpage}
+          paramB: {match.params.b}
         </h1>
       )} />
     </div>
