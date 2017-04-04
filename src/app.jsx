@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import expect from 'expect';
 import deepFreeze from 'deep-freeze';
-import { createStore } from 'redux';
-import { combineReducers } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
 const todo = (state, action) => {
   switch (action.type) {
@@ -229,22 +229,6 @@ const TodoApp = ({ store }) => (
     <Footer store={store} />
   </div>
 );
-
-class Provider extends Component {
-  getChildContext() {
-    return {
-      store: this.props.store
-    };
-  }
-
-  render() {
-    return this.props.children;
-  }
-}
-
-Provider.childContextTypes = {
-  store: React.PropTypes.object
-};
 
 ReactDOM.render(
   <Provider store={createStore(todoApp)}>
