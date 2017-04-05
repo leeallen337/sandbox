@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 const App = () => (
   <Router>
     <div>
-      <Route path="/:a/:b" render={({match}) => (
+      <Route path="/:a(\d+)/:b" render={({match}) => (
         <h1>
           paramA: {match.params.a}
           <br />
