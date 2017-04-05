@@ -14,17 +14,24 @@ const Links = () => (
   </nav>
 );
 
-const App = () => (
-  <Router>
-    <div>
-      <Links />
-      <Switch>
-        <Route exact path="/" render={() => <h1>Home</h1>} />
-        <Route path="/about" render={() => <h1>About</h1>} />
-        <Route render={() => <h1>Page not found</h1>} />
-      </Switch>
-    </div>
-  </Router>
-);
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Links />
+          <Switch>
+            <Route exact path="/" render={() => <h1>Home</h1>} />
+            <Route path="/about" render={() => <h1>About</h1>} />
+            <Route path="/contact" render={() => <h1>Contact</h1>} />
+            <Route path="/:itemid"
+              render={({match}) => <h1>Item: {match.params.itemid}</h1>} />
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
+}
+
 
 export default App;
